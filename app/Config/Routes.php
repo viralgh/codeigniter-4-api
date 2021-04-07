@@ -34,6 +34,11 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+$routes->group('api', ['namespace' => 'Api/Country'], function($routes)
+{
+    $routes->resource('api/country');
+});
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
